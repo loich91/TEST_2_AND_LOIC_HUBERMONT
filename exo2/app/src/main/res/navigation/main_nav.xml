@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/fragmentShoppingList">
+
+    <fragment
+        android:id="@+id/fragmentShoppingList"
+        android:name="com.technipixl.testexo2.FragmentShoppingList"
+        android:label="fragment_shopping_list"
+        tools:layout="@layout/fragment_shopping_list" >
+        <action
+            android:id="@+id/action_fragmentShoppingList_to_fragmentAddArticle"
+            app:destination="@id/fragmentAddArticle"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_enter_anim" />
+        <argument
+            android:name="view"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAddArticle"
+        android:name="com.technipixl.testexo2.FragmentAddArticle"
+        android:label="fragment_add_article"
+        tools:layout="@layout/fragment_add_article" >
+        <argument
+            android:name="view"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="quantity"
+            app:argType="integer" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_fragmentAddArticle_to_fragmentShoppingList2"
+            app:destination="@id/fragmentShoppingList"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+</navigation>
